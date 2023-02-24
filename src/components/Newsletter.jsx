@@ -12,11 +12,8 @@ export default function Newsletter() {
     setNewSearch(e.target.value)
   };
 
-  // const filtered = !search
-          
-  //         :data.filter((data) =>
-  //         data.name.toLowerCase().include(search.toLocaleLowerCase())
-  //         );
+
+
 
           
   return (
@@ -32,7 +29,7 @@ export default function Newsletter() {
         </p>
       </div>
       <div className="container">
-        Filter data:{""}
+        
         <input type="text"  value={search} placeholder="Search for food ..."  onChange={handleSearchChange} />
         <button  onClick={(() => setNewSearch(search))}>Search</button>
       </div>
@@ -59,6 +56,8 @@ const Section = styled.section`
         outline: none;
       }
     }
+
+
     button {
       padding: 1rem 5rem;
       background-color: transparent;
@@ -79,6 +78,8 @@ const Section = styled.section`
     .container {
       padding: 0.8rem;
       border-radius: 0.5rem;
+
+  
       input {
         width: 75vw;
         padding: 0.5rem;

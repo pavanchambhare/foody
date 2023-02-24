@@ -1,4 +1,5 @@
 import React from "react";
+import { useState,useEffect } from "react";
 import styled from "styled-components";
 import product1 from "../assets/product1.jpg";
 import product2 from "../assets/product2.jpg";
@@ -7,6 +8,9 @@ import product4 from "../assets/product4.jpg";
 import { Link } from "react-router-dom";
 import { imageZoomEffect, TitleStyles } from "./ReusableStyles";
   const Products = () => {
+    const [showNotification, setShowNotification] = useState(false);
+ 
+
   const data = [
     {
       image: product1,
@@ -31,12 +35,19 @@ import { imageZoomEffect, TitleStyles } from "./ReusableStyles";
     },
   ];
   
-  {data.map((item, i) => (
-   <li key={i}>
-     <Link to={item.data}>{item.name}</Link>
-   </li>
-   ))}
+  // useEffect(() => {
+  //     showNotification(data + 1)
+  // },[setShowNotification])
 
+   function handleAddCardClick() {
+    setShowNotification(true);
+    console.log(data.name)
+    
+  }
+  function handleNotificationClose() {
+    setShowNotification(data.name);
+    console.log(handleNotificationClose)
+  }
   return (
     <Section id="products">
       <div className="title">
@@ -47,6 +58,7 @@ import { imageZoomEffect, TitleStyles } from "./ReusableStyles";
       <div className="products">
         {data.map((product) => {
           return (
+            
             <div className="product">
               <div className="image">
                 <img src={product.image} alt="" />
@@ -54,7 +66,7 @@ import { imageZoomEffect, TitleStyles } from "./ReusableStyles";
               <h2>{product.name}</h2>
               <h3>{product.price}</h3>
               <p>He Printing and Typesetting the industry. Lorem Ipsum has</p>
-              <button>Buy Now</button>
+              <button  onClick={handleAddCardClick + product.name}>Buy Now</button>
             </div>
           );
         })}
@@ -95,6 +107,7 @@ const Section = styled.section`
           width: 15rem;
           object-fit: cover;
         }
+       
       }
       button {
         border: none;
@@ -122,5 +135,6 @@ const Section = styled.section`
     .products {
       grid-template-columns: repeat(2, 1fr);
     }
+    
   }
 `;

@@ -3,6 +3,7 @@ import styled from "styled-components";
 import foodYummy from "../assets/FoodYummy.png";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { VscChromeClose } from "react-icons/vsc";
+import {MdOutlineShoppingCart} from 'react-icons/md'
 export default function Navbar() {
   const [navbarState, setNavbarState] = useState(false);
   const html = document.querySelector("html");
@@ -25,6 +26,7 @@ export default function Navbar() {
             )}
           </div>
         </div>
+        
         <ul className="links">
           <li>
             <a href="#home" className="active">
@@ -47,6 +49,7 @@ export default function Navbar() {
             <a href="#newsletter">Newsletter</a>
           </li>
         </ul>
+       <MdOutlineShoppingCart  className="card-menu"/>
       </Nav>
       <ResponsiveNav state={navbarState} className={navbarState ? "show" : ""}>
         <ul>
@@ -103,7 +106,13 @@ const Nav = styled.nav`
     .toggle {
       display: none;
     }
-  }
+  }    .card-menu{
+        position: relative;
+        left: 1rem;
+        font-size: 18px;
+        bottom: 0.1rem;
+        
+      }
   .links {
     display: flex;
     list-style-type: none;
@@ -136,6 +145,13 @@ const Nav = styled.nav`
         display: block;
       }
     }
+    .card-menu{
+        position: relative;
+        left: 1rem;
+        font-size: 18px;
+        bottom: 0.1rem;
+        
+      }
     .links {
       display: none;
     }

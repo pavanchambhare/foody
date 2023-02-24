@@ -94,6 +94,8 @@ const Section = styled.section`
           border-radius: 10rem;
           img {
             height: 10rem;
+            width: 10rem;
+            
           }
         }
       }

@@ -1,8 +1,33 @@
 import React from "react";
+import Carousel from "react-multi-carousel";
+import "react-multi-carousel/lib/styles.css";
 import styled from "styled-components";
 import hero from "../assets/hero.jpg";
 import heroDesign from "../assets/HeroDesign.png";
 export default function Hero() {
+
+
+  const responsive = {
+    superLargeDesktop: {
+      // the naming can be any, depends on you.
+      breakpoint: { max: 4000, min: 3000 },
+      items: 5
+    },
+    desktop: {
+      breakpoint: { max: 3000, min: 1024 },
+      items: 3
+    },
+    tablet: {
+      breakpoint: { max: 1024, min: 464 },
+      items: 2
+    },
+    mobile: {
+      breakpoint: { max: 464, min: 0 },
+      items: 1
+    }
+  };
+
+
   return (
     <Section id="home">
       <div className="background">
@@ -24,7 +49,10 @@ export default function Hero() {
           </em>
           <button>ORDER NOW</button>
         </div>
+
+
       </div>
+ 
     </Section>
   );
 }
